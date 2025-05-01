@@ -1,22 +1,33 @@
 <template>
-  <div>
-    <input type="text" v-model="value" :name="field.name" />
-  </div>
+    <span class="w-full">
+        <span
+            v-for="(value, option) in availableOptions"
+            :key="option"
+            :class="optionClass(option)"
+            :title="value"
+            class="inline-block rounded-full w-2 h-2 mr-1"
+        />
+    </span>
 </template>
 
 <script>
 export default {
-  props: ['resourceName', 'resourceId', 'field'],
-  data() {
-    return {
-      value: this.field.value || ''
-    }
+  props: ['resourceName', 'field'],
+
+  computed: {
+    availableOptions() {
+      return this.field.options
+    },
   },
-  watch: {
-    value(newValue) {
-      // Emit the new value when it changes
-      this.$emit('input', newValue)
-    }
-  }
+
+  methods: {
+    optionClass(option) {
+      return {
+        'bg-success': this.field.value ? this.field.value.includes(option) : false,
+        'bg-danger': this.field.value ? !this.field.value.includes(option) : true,
+      }
+    },
+  },
+
 }
 </script>
