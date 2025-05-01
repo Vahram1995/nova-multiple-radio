@@ -1,5 +1,5 @@
 {
-  "name": "Vahram1995/nova-multiple-radio",
+  "name": "vahram1995/nova-multiple-radio",
   "description": "A Laravel Nova field for multiple radio buttons.",
   "type": "library",
   "license": "MIT",
