@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="color" v-model="value" @input="updateValue($event.target.value)">
+    <input type="text" v-model="value" :name="field.name" />
   </div>
 </template>
 
@@ -12,10 +12,10 @@ export default {
       value: this.field.value || ''
     }
   },
-  methods: {
-    updateValue(value) {
-      this.value = value;
-      this.$emit('input', value);
+  watch: {
+    value(newValue) {
+      // Emit the new value when it changes
+      this.$emit('input', newValue)
     }
   }
 }
