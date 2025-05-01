@@ -1,0 +1,29 @@
+{
+  "name": "Vahram1995/nova-multiple-radio",
+  "description": "A Laravel Nova field for multiple radio buttons.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Your Name",
+      "email": "you@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Vahram1995\\NovaMultipleRadio\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Vahram1995\\NovaMultipleRadio\\FieldServiceProvider"
+      ]
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "laravel/nova": "^4.0"
+  },
+  "keywords": ["laravel", "nova", "radio", "multiple"]
+}
